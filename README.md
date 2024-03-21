@@ -7,12 +7,18 @@ In order to use the FOLTY toolbox, the following steps should be carried out:
 1.- Download the latest version of the toolbox, and add the folder (and all the subfolders) to the matlab path.
 
 2.- From the folder, run the "install.m" file. After this, restart Matlab. There should be a "FOWLTY" section on the Simulink library browser.
+
 3.- Double click on the "Farm Temlate" block, and follow the instructions to generate the desired farm.
+
 4.- Once all the steps are finished, five different files should be generated on the selected folder:
       - a ".slx" file with the Simulink model of the farm;
+
       - a ".mat" file containing the wind information;
+      
       - an initialisation file (".m") to initialise the required variables and run the Simulink farm model from matlab and visualise results (note that the model can also be run from simulink once the initialisation file is run);
+      
       - a function called "windRealisationGenerator.m" which can be used to generate more ".mat" wind files as specified in the next section;
+      
       - and, if the faulty turbine model is selected, a file termed "faultScenarios.m" will also be included to define the desired faults.
 
 # USING THE TOOLBOX
