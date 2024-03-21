@@ -1,5 +1,9 @@
 # FOWLTY
-Matlab/Simulink toolbox to simulate offshore wind farms and recreate faults on different subcomponents of the turbines. Note that this is the first version and that upgrades will be uploaded gradually and documented in the upgrades document. Additionally, for any question, problem, or query, the users are encouraged to write in the discussions on the GitHub page or an email to "ypena@mondragon.edu". However, note that providing support for this toolbox is not part of my work and the time I need to reply will depend on the amount of work I have.
+Matlab/Simulink toolbox to simulate offshore wind farms and recreate faults on different subcomponents of the turbines. 
+
+Note that upgrades of the code will be uploaded gradually and documented in the upgrades document. 
+
+For any question, problem, or query, the users are encouraged to write in the discussions on the GitHub page or an email to "ypena@mondragon.edu". However, note that providing support for this toolbox is not part of my work and the time I need to reply will depend on the amount of work I have.
 
 # INSTALLING THE TOOLBOX
 In order to use the FOLTY toolbox, the following steps should be carried out:
