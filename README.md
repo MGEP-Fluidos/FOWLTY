@@ -3,7 +3,9 @@ Matlab/Simulink toolbox to simulate offshore wind farms and recreate faults on d
 
 # INSTALLING THE TOOLBOX
 In order to use the FOLTY toolbox, the following steps should be carried out:
+
 1.- Download the latest version of the toolbox, and add the folder (and all the subfolders) to the matlab path.
+
 2.- From the folder, run the "install.m" file. After this, restart Matlab. There should be a "FOWLTY" section on the Simulink library browser.
 3.- Double click on the "Farm Temlate" block, and follow the instructions to generate the desired farm.
 4.- Once all the steps are finished, five different files should be generated on the selected folder:
