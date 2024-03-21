@@ -1,32 +1,32 @@
 # FOWLTY
-Matlab/Simulink toolbox to simulate offshore wind farms and recreate faults on different subcomponents of the turbines. Note that this is a first version and that upgrades will be uploaded gradually and documented in the upgrades document. Additionally, for any question, problem, or query, the users are encouraged to write an email to "ypena@mondragon.edu" and I will try to reply as soon as possible (note, however, that providing support is not my work and the time I need to reply will depend on the ammount of work I have).
+Matlab/Simulink toolbox to simulate offshore wind farms and recreate faults on different subcomponents of the turbines. Note that this is the first version and that upgrades will be uploaded gradually and documented in the upgrades document. Additionally, for any question, problem, or query, the users are encouraged to write in the discussions on the GitHub page or an email to "ypena@mondragon.edu". However, note that providing support for this toolbox is not part of my work and the time I need to reply will depend on the amount of work I have.
 
 # INSTALLING THE TOOLBOX
 In order to use the FOLTY toolbox, the following steps should be carried out:
 
-1.- Download the latest version of the toolbox, and add the folder (and all the subfolders) to the matlab path.
+1.- Download the latest version of the toolbox, and add the folder (and all the subfolders) to the Matlab path.
 
 2.- From the folder, run the "install.m" file. After this, restart Matlab. There should be a "FOWLTY" section on the Simulink library browser.
 
-3.- Double click on the "Farm Temlate" block, and follow the instructions to generate the desired farm.
+3.- Double-click on the "Farm Template" block, and follow the instructions to generate the desired farm.
 
-4.- Once all the steps are finished, five different files should be generated on the selected folder:
+4.- Once all the steps are finished, five different files should be generated in the selected folder:
    - a ".slx" file with the Simulink model of the farm;
 
    - a ".mat" file containing the wind information;
       
-   - an initialisation file (".m") to initialise the required variables and run the Simulink farm model from matlab and visualise results (note that the model can also be run from simulink once the initialisation file is run);
+   - an initialisation file (".m") to initialise the required variables and run the Simulink farm model from MATLAB and visualise results (note that the model can also be run from Simulink once the initialisation file is run);
       
    - a function called "windRealisationGenerator.m" which can be used to generate more ".mat" wind files as specified in the next section;
       
    - and, if the faulty turbine model is selected, a file termed "faultScenarios.m" will also be included to define the desired faults.
 
 # USING THE TOOLBOX
-For a correct use of the toolbox, the following considerations should be taken into account:
+For the correct use of the toolbox, the following considerations should be taken into account:
 
-1.- The wind farm is generated along with a single wind file, with a unique mean wind speed. However, it is possible to use the same wind farm with additional wind files defined for different meand wind speeds (or the same, but a different realisation of such speed). To generate more wind files, the "windRealisationGenerator.m" function can be used, specifiying the original wind file and the specifications of the new desired wind. Note that it is important to select the original wind file, since there are some variables (such as the wind field grid) that should be the same in order to work (since the wind farm simulink model is defined considering such variables).
+1.- The wind farm is generated along with a single wind file, with a unique mean wind speed. However, it is possible to use the same wind farm with additional wind files defined for different mean wind speeds (or the same, but a different realisation of such speed). To generate more wind files, the "windRealisationGenerator.m" function can be used, specifying the original wind file and the specifications of the new desired wind. Note that it is important to select the original wind file since there are some variables (such as the wind field grid) that should be the same in order to work (since the wind farm simulink model is defined considering such variables).
 
-2.- It is possible to define different wind turbine models using the "nrelvals.m" file located at the "nrel5mw" folder. To this end, copy such a file and define the speficitaions of the new turbine on the new file. Then, open the "lib_FOWLTY.slx" library in Simulink and open the turbines block and create a new turbine block by copying one of the existing ones (faulty or not faulty, depending on the requirements). Then, run the previously generated matlab file until it asks you to select the turbine block to be updated, go to simulink, select the block you just generated, go back to the command window, and press enter. After these steps are finished, a new turbine type should appear when creating a wind farm.
+2.- It is possible to define different wind turbine models using the "nrelvals.m" file located in the "nrel5mw" folder. To this end, copy such a file and define the specifications of the new turbine on the new file. Then, open the "lib_FOWLTY.slx" library in Simulink open the turbine block and create a new turbine block by copying one of the existing ones (faulty or not faulty, depending on the requirements). Then, run the previously generated Matlab file until it asks you to select the turbine block to be updated, go to Simulink, select the block you just generated, go back to the command window, and press enter. After these steps are finished, a new turbine type should appear when creating a wind farm.
 
 3.- For a comprehensive definition of the assumptions considered, the interested reader is referred to [1].
 
