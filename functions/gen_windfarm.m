@@ -231,7 +231,7 @@ else
 end
 
 % % Setup sample time of rate transition blocks
-set_param([wfname '/CTrate'],'OutPortSampleTime',num2str(wind.Ts));
+set_param([wfname '/CTrate'],'OutPortSampleTime','wind.Ts');
 %set_param([wfname '/ENrate'],'OutPortSampleTime',num2str(wind.Ts));
 
 %% Add wake and wind speed blocks
@@ -329,7 +329,7 @@ for i = 1:length(farm.turbines)
 % %             CT delay block
             ctd.block = add_block('simulink/Discrete/Integer Delay',[wfname '/Wake' int2str(i) '/aDelay' int2str(j)], ...
                         'MakeNameUnique','on' ,...
-                          'samptime',num2str(wind.Ts), ...
+                          'samptime','wind.Ts', ...
                           'NumDelays',int2str(delays(i,j)), ...
                           'vinit','1');
 % %             Set block position
@@ -340,7 +340,7 @@ for i = 1:length(farm.turbines)
 % %             Wake center delay block          
             wcd.block = add_block('simulink/Discrete/Integer Delay',[wfname '/Wake' int2str(i) '/WCDelay' int2str(j)], ...
                           'MakeNameUnique','on' ,...
-                          'samptime',num2str(wind.Ts), ...
+                          'samptime','wind.Ts', ...
                           'NumDelays',int2str(delays(i,j)), ...
                           'vinit',int2str(farm.pos(2,i)));
 % %             Set block position
@@ -441,14 +441,15 @@ end
 
 % %Setting Default parameters in simulation configuration
 
-if(isfield(wind,'SimTime'))
-    set_param(mainsys,'StopTime',num2str(wind.SimTime));
-else
-    set_param(mainsys,'StopTime',num2str((size(wind.Ux,2)-round(wind.grid.xsize/wind.grid.size))*wind.Ts));
-end
+% if(isfield(wind,'SimTime'))
+%     set_param(mainsys,'StopTime',num2str(wind.SimTime));
+% else
+%     set_param(mainsys,'StopTime',num2str((size(wind.Ux,2)-round(wind.grid.xsize/wind.grid.size))*wind.Ts));
+% end
+set_param(mainsys,'StopTime','tMax');
 set_param(mainsys,'InlineParams','on');
 set_param(mainsys,'EnhancedBackFolding','on')
-set_param(mainsys,'SimulationMode','accelerator')
+set_param(mainsys,'SimulationMode','normal')
 
 
 

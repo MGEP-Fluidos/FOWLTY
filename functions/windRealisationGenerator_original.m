@@ -17,12 +17,12 @@ windData.Lx         = original.wind.input.Lx;          % [m]    Wind field lengt
 windData.Ly         = original.wind.input.Ly;          % [m]    Wind field width
 windData.SimTime    = original.wind.input.SimTime;     % [s]    Simulation length
 windData.desc       = original.wind.input.desc;        %        Description
-% windData.Ts         = original.wind.input.Ts;
-windData.Ts         = 0.01;
+windData.Ts         = original.wind.input.Ts;          % [s]    Sampling time
 
 %% Re-define (if needed) a variable
 % Note that if Lx and Ly are changed, the simulation will not run.
-windData.Ua         = 12;                             % [m/s]  New mean wind speed
+windData.Ua         = 12;                            % [m/s]  New mean wind speed
+% windData.Ts         = 0.01;                         % [s]    New sampling time
 % windData.Ti         = 0.1;                          %        New Turbulence intensity
 % windData.d          = 10;                           % [m]    New grid size
 windData.SimTime    = 35;                            % [s]    New simulation length
