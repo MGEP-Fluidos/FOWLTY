@@ -37,7 +37,7 @@ For the correct use of the toolbox, the following considerations should be taken
 # REFERENCING THE WORK
 When using the toolbox, please, reference [1] and [2] to acknowledge the work carried out by the authors.
 
-[1] Peña-Sanchez, Y., Penalba, M., Knudsen, T., Nava, V., Pardo, D. (2024). Development and Validation of a Health-aware Floating Offshore Wind Farm Simulation Platform (FOWLTY) for Fault Detection and Mitigation. Submitted to Renewable Energies.
+[1] Peña-Sanchez, Y., Penalba, M., Knudsen, T., Nava, V., & Pardo, D. (2024). Development and validation of a health-aware floating offshore wind farm simulation platform: FOWLTY. Wind Energy and Engineering Research, vol. 2, p. 100008. https://doi.org/10.1016/j.weer.2024.100008
 
 # ACKNOWLEDGEMENTS
 Special thanks to the original developers of the "SimWindFarm" toolbox, on which the FOWLTY toolbox is based:
