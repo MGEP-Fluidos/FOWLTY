@@ -1,14 +1,14 @@
 # FOWLTY
-Matlab/Simulink toolbox to simulate offshore wind farms and recreate faults on different subcomponents of the turbines. 
+FOWLTY is a MATLAB/Simulink toolbox designed to simulate offshore wind farms and introduce faults in different turbine subcomponents.
 
-Note that upgrades of the code will be uploaded gradually and documented in the releases section. 
+Note: The toolbox will be updated gradually, with changes documented in the Releases section.
 
-For any question, problem, or query, the users are encouraged to write in the discussions on the GitHub page or an email to "ypena@mondragon.edu". However, note that providing support for this toolbox is not part of my work and the time I need to reply will depend on the amount of work I have.
+For questions, issues, or feedback, users are encouraged to post in the Discussions section of this GitHub repository or email "ypena@mondragon.edu". However, please note that direct support is not guaranteed, and response times may vary depending on workload.
 
 # INSTALLING THE TOOLBOX
-In order to use the FOWLTY toolbox, the following steps should be carried out:
+To install and set up the FOWLTY toolbox, follow these steps:
 
-1.- Download the latest version of the toolbox, and add the folder (and all the subfolders) to the Matlab path.
+1.- Download the latest version of the toolbox, and add the folder (and subfolders) to the Matlab path. Note that such folders (and subfolders) have to be included in the Matlab path to use FOWLTY, so it is recommended to do it every time Matlab is opened (by, for example, including them using the function "addpath" in Matlab's "startup" function).
 
 2.- From the folder, run the "install.m" file. After this, restart Matlab. There should be a "FOWLTY" section on the Simulink library browser.
 
@@ -26,13 +26,11 @@ In order to use the FOWLTY toolbox, the following steps should be carried out:
    - and, if the faulty turbine model is selected, a file termed "faultScenarios.m" will also be included to define the desired faults.
 
 # USING THE TOOLBOX
-For the correct use of the toolbox, the following considerations should be taken into account:
+Once the wind farm model is generated, it is initially linked to a single wind file corresponding to a specific mean wind speed. However, it is possible to simulate additional wind conditions by generating new wind files. This can be done using the windRealisationGenerator.m function, which allows users to specify the original wind file along with the desired parameters for the new wind realization. It is important to select the original wind file to maintain consistency, as certain wind field variables must remain unchanged for the model to function correctly.
 
-1.- The wind farm is generated along with a single wind file, with a unique mean wind speed. However, it is possible to use the same wind farm with additional wind files defined for different mean wind speeds (or the same, but a different realisation of such speed). To generate more wind files, the "windRealisationGenerator.m" function can be used, specifying the original wind file and the specifications of the new desired wind. Note that it is important to select the original wind file since there are some variables (such as the wind field grid) that should be the same in order to work (since the wind farm simulink model is defined considering such variables).
+FOWLTY also allows users to define new turbine models by modifying the nrelvals.m file located in the nrel5mw/ folder. To do so, the user must create a copy of this file and modify the relevant parameters according to the specifications of the new turbine. Once the new turbine is defined, it must be integrated into the Simulink environment by opening lib_FOWLTY.slx, duplicating an existing turbine block, and making the necessary adjustments. After running the initialization script, the user will be prompted to select the newly created turbine block in Simulink. Once confirmed, the turbine will be registered, making it available as an option when creating wind farm models.
 
-2.- It is possible to define different wind turbine models using the "nrelvals.m" file located in the "nrel5mw" folder. To this end, copy such a file and define the specifications of the new turbine on the new file. Then, open the "lib_FOWLTY.slx" library in Simulink open the turbine block and create a new turbine block by copying one of the existing ones (faulty or not faulty, depending on the requirements). Then, run the previously generated Matlab file until it asks you to select the turbine block to be updated, go to Simulink, select the block you just generated, go back to the command window, and press enter. After these steps are finished, a new turbine type should appear when creating a wind farm.
-
-3.- For a comprehensive definition of the assumptions considered, the interested reader is referred to [1].
+For a comprehensive definition of the modeling assumptions and implementation details, users are referred to [1].
 
 # REFERENCING THE WORK
 When using the toolbox, please, reference [1] and [2] to acknowledge the work carried out by the authors.
